@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carbon — AI API Management Platform</title>
+  <link rel="stylesheet" href="/css/main.css?v=5"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+<body class="landing-body">
+
+  <!-- ═══ BACKGROUND LAYERS ══════════════════════════════════════ -->
+  <div class="bg-layer" aria-hidden="true">
+    <!-- Animated grid canvas -->
+    <canvas id="bgCanvas" class="bg-canvas"></canvas>
+    <!-- Radial glow orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <!-- Shooting stars -->
+    <div class="bg-stars">
+      <span class="star s1"></span>
+      <span class="star s2"></span>
+      <span class="star s3"></span>
+      <span class="star s4"></span>
+      <span class="star s5"></span>
+    </div>
+    <!-- Static dot grid overlay -->
+    <div class="bg-dots"></div>
+  </div>
+
+  <!-- ═══ NAV ═══════════════════════════════════════════════════ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/assets/carbon-logo.svg" width="34" height="34" alt="Carbon Logo"/>
+        <span>Carbon</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it Works</a></li>
+      </ul>
+      <a href="/register" class="btn-primary nav-cta">Launch Carbon →</a>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ══════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" stroke="#aaff00" stroke-width="2" fill="none"/>
+          <circle cx="12" cy="12" r="4" fill="#aaff00"/>
+        </svg>
+        AI API MANAGEMENT PLATFORM
+      </div>
+      <h1 class="hero-title">
+        Give your AI <span class="c-green">power.</span><br/>
+        Keep <span class="c-green">control.</span>
+      </h1>
+      <p class="hero-sub">
+        Connect your APIs, define access rules in plain language,<br/>
+        review every policy before activation.
+      </p>
+      <div class="hero-actions">
+        <a href="/register" class="btn-primary btn-large">Launch Carbon →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-visual">
+        <!-- Scan line sweep -->
+        <div class="vis-scan"></div>
+        <!-- Particle dots -->
+        <div class="vis-particles">
+          <span class="vp v1"></span>
+          <span class="vp v2"></span>
+          <span class="vp v3"></span>
+          <span class="vp v4"></span>
+          <span class="vp v5"></span>
+          <span class="vp v6"></span>
+          <span class="vp v7"></span>
+          <span class="vp v8"></span>
+        </div>
+        <!-- Base glow ring -->
+        <div class="vis-glow-ring"></div>
+
+        <!-- Large floating logo blob above platforms -->
+        <div class="vis-blob">
+          <svg viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!--
+              Large version of the logo mark — organic F/₹ shape
+              matching logu.png: thick rounded strokes, mint/teal color
+            -->
+            <!-- Left vertical stem -->
+            <rect x="18" y="12" width="28" height="95" rx="14" fill="#a8e6cf"/>
+            <!-- Top horizontal pill -->
+            <rect x="18" y="12" width="90" height="28" rx="14" fill="#a8e6cf"/>
+            <!-- Middle horizontal pill (shorter) -->
+            <rect x="18" y="60" width="72" height="28" rx="14" fill="#a8e6cf"/>
+            <!-- Bottom hook / descender -->
+            <rect x="64" y="76" width="28" height="42" rx="14" fill="#a8e6cf"/>
+            <!-- Bottom right pill -->
+            <rect x="46" y="104" width="68" height="28" rx="14" fill="#a8e6cf"/>
+          </svg>
+        </div>
+        
+        <!-- Central 3D stack -->
+        <div class="vis-stack-3d">
+          <div class="stack-platform s-base"></div>
+          <div class="stack-platform s-mid"></div>
+          <div class="stack-platform s-top"></div>
+          <div class="stack-connector"></div>
+        </div>
+
+        <!-- Floating glass cards with icons -->
+        <div class="float-card fc-refresh" style="left:60px;bottom:180px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2.5" stroke-linecap="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/>
+          </svg>
+        </div>
+        <div class="float-card fc-api" style="left:50px;top:140px">
+          <span class="fc-text">API</span>
+        </div>
+        <div class="float-card fc-shield" style="right:60px;top:130px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#aaff00">
+            <path d="M12 2L4 6v6c0 5.2 3.4 10 8 11.3 4.6-1.3 8-6.1 8-11.3V6z" opacity="0.95"/>
+            <path d="M9 12l2 2 4-4" stroke="#0f1f05" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="float-card fc-bolt" style="right:90px;bottom:160px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#aaff00">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9z"/>
+          </svg>
+        </div>
+
+        <!-- Orbital paths and glow lines -->
+        <svg class="vis-orbit" viewBox="0 0 500 500" fill="none">
+          <!-- Large orbital ring -->
+          <ellipse cx="250" cy="280" rx="200" ry="80" stroke="#aaff00" stroke-width="1.5" opacity="0.25" stroke-dasharray="8 6"/>
+          <!-- Connecting paths -->
+          <path d="M100 200 Q150 240 200 260" stroke="#aaff00" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+          <path d="M400 200 Q350 240 300 260" stroke="#aaff00" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+          <path d="M120 360 Q180 330 230 310" stroke="#aaff00" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+          <path d="M380 360 Q320 330 270 310" stroke="#aaff00" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+          <!-- Glow particles -->
+          <circle cx="120" cy="200" r="3" fill="#aaff00" opacity="0.8"/>
+          <circle cx="380" cy="200" r="3" fill="#aaff00" opacity="0.8"/>
+          <circle cx="250" cy="160" r="2" fill="#aaff00" opacity="0.6"/>
+          <circle cx="150" cy="300" r="2" fill="#aaff00" opacity="0.5"/>
+          <circle cx="350" cy="300" r="2" fill="#aaff00" opacity="0.5"/>
+          <circle cx="200" cy="380" r="2.5" fill="#aaff00" opacity="0.6"/>
+          <circle cx="300" cy="380" r="2.5" fill="#aaff00" opacity="0.6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES ════════════════════════════════════════════ -->
+  <section class="features-section" id="features">
+    <div class="features-inner">
+
+      <!-- Header -->
+      <div class="features-header">
+        <span class="features-eyebrow">Features</span>
+        <h2 class="features-title">Powerful Features. Complete Control.</h2>
+        <p class="features-sub">Everything your AI needs. Nothing it shouldn't access.<br/>Carbon connects your APIs, enforces your policies — and runs on <strong style="color:var(--c-green)">Rialo</strong> infrastructure with <strong style="color:var(--c-green)">Latch</strong> hardware-enforced credential protection.</p>
+
+        <!-- Powered by badge row -->
+        <div class="features-powered">
+          <span class="fpow-label">Powered by</span>
+          <a href="https://www.rialo.io/" target="_blank" rel="noopener" class="fpow-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+            Rialo
+          </a>
+          <span class="fpow-plus">×</span>
+          <a href="https://onlatch.com/" target="_blank" rel="noopener" class="fpow-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            Latch
+          </a>
+        </div>
+      </div>
+
+      <!-- 7-feature grid -->
+      <div class="features-grid">
+
+        <!-- 01 AI Chat Playground -->
+        <div class="feat-card feat-card-reveal feat-large">
+          <div class="feat-card-top">
+            <div class="feat-num">01</div>
+            <div class="feat-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+          </div>
+          <h3>AI Chat Playground</h3>
+          <p class="feat-card-tagline">Your AI. Connected to Your APIs.</p>
+          <p>Interact through a familiar chat interface. Ask questions, retrieve information, and execute permitted API operations using natural language.</p>
+          <ul class="feat-list">
+            <li>Interactive AI chat interface</li>
+            <li>Access to connected APIs</li>
+            <li>Policy-aware AI interactions</li>
+            <li>Clear responses for restricted requests</li>
+          </ul>
+          <!-- Mini chat preview -->
+          <div class="feat-chat-preview">
+            <div class="fcp-msg fcp-user">What's the Bitcoin price?</div>
+            <div class="fcp-msg fcp-ai">BTC is at <strong>$67,420</strong> — allowed ✓</div>
+            <div class="fcp-msg fcp-user">Execute a trade</div>
+            <div class="fcp-msg fcp-blocked">Trading blocked by policy ✗</div>
+          </div>
+        </div>
+
+        <!-- 02 Multi-API Integration -->
+        <div class="feat-card feat-card-reveal">
+          <div class="feat-card-top">
+            <div class="feat-num">02</div>
+            <div class="feat-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+          </div>
+          <h3>Multi-API Integration</h3>
+          <p class="feat-card-tagline">All Your APIs in One Workspace.</p>
+          <p>Connect multiple external APIs and manage them from a single dashboard.</p>
+          <ul class="feat-list">
+            <li>OpenAI, Grok, Coinbase &amp; custom REST</li>
+            <li>Manage multiple API credentials</li>
+            <li>Configure individual connections</li>
+            <li>Secure server-side storage</li>
+          </ul>
+          <div class="feat-api-chips">
+            <span class="feat-chip">Grok</span>
+            <span class="feat-chip">Coinbase</span>
+            <span class="feat-chip">SMS</span>
+            <span class="feat-chip feat-chip-add">+ Add</span>
+          </div>
+        </div>
+
+        <!-- 03 Policy Builder -->
+        <div class="feat-card feat-card-reveal">
+          <div class="feat-card-top">
+            <div class="feat-num">03</div>
+            <div class="feat-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </div>
+          </div>
+          <h3>Natural Language Policy Builder</h3>
+          <p class="feat-card-tagline">Define Permissions in Plain English.</p>
+          <p>Describe what your AI can and cannot do. Carbon transforms your instructions into structured API access policies.</p>
+          <ul class="feat-list">
+            <li>Create policies using natural language</li>
+            <li>Define allowed &amp; blocked operations</li>
+            <li>Specify API endpoints</li>
+            <li>Generate &amp; review structured policies</li>
+          </ul>
+        </div>
+
+        <!-- 04 Policy Approval -->
+        <div class="feat-card feat-card-reveal">
+          <div class="feat-card-top">
+            <div class="feat-num">04</div>
+            <div class="feat-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><path d="M12 2L4 6v6c0 5.1 3.4 9.9 8 11.2C16.6 21.9 20 17.1 20 12V6z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+          </div>
+          <h3>Policy Approval &amp; Activation</h3>
+          <p class="feat-card-tagline">You Approve. Carbon Enforces.</p>
+          <p>Stay in control before any policy goes active. Review generated permissions and activate only when ready.</p>
+          <ul class="feat-list">
+            <li>Preview generated policies</li>
+            <li>Review access permissions</li>
+            <li>Confirm and activate policies</li>
+            <li>Update or revoke at any time</li>
+          </ul>
+          <div class="feat-approve-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Confirm &amp; Activate
+          </div>
+        </div>
+
+        <!-- 05 Security & Rate Limits -->
+        <div class="feat-card feat-card-reveal">
+          <div class="feat-card-top">
+            <div class="feat-num">05</div>
+            <div class="feat-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+          </div>
+          <h3>Security &amp; Rate Limits</h3>
+          <p class="feat-card-tagline">Control Every Layer of API Access.</p>
+          <p>Monitor and manage how your AI interacts with connected services in real time.</p>
+          <ul class="feat-list">
+            <li>Monitor allowed &amp; blocked permissions</li>
+            <li>Configure API rate limits</li>
+            <li>Set request &amp; usage restrictions</li>
+            <li>Prevent unauthorized operations</li>
+          </ul>
+          <div class="feat-bar-preview">
+            <div class="feat-bar-row">
+              <span>Rate limit</span>
+              <div class="feat-bar"><div class="feat-bar-fill" style="width:68%"></div></div>
+              <span>68%</span>
+            </div>
+            <div class="feat-bar-row">
+              <span>Spending</span>
+              <div class="feat-bar"><div class="feat-bar-fill feat-bar-warn" style="width:34%"></div></div>
+              <span>34%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 Request Monitoring -->
+        <div class="feat-card feat-card-reveal">
+          <div class="feat-card-top">
+            <div class="feat-num">06</div>
+            <div class="feat-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+          </div>
+          <h3>Real-Time Request Monitoring</h3>
+          <p class="feat-card-tagline">Every Request. Full Visibility.</p>
+          <p>Understand exactly what happens behind every AI interaction with detailed request logs.</p>
+          <ul class="feat-list">
+            <li>View API request history</li>
+            <li>Track allowed &amp; blocked requests</li>
+            <li>See which policy was applied</li>
+            <li>Understand why requests were rejected</li>
+          </ul>
+          <div class="feat-log-preview">
+            <div class="feat-log-row"><span class="feat-dot feat-dot-green"></span><span>Coinbase</span><span class="feat-log-allow">Allowed</span></div>
+            <div class="feat-log-row"><span class="feat-dot feat-dot-red"></span><span>Coinbase</span><span class="feat-log-block">Blocked</span></div>
+            <div class="feat-log-row"><span class="feat-dot feat-dot-red"></span><span>SMS API</span><span class="feat-log-block">Blocked</span></div>
+          </div>
+        </div>
+
+        <!-- 07 Credential Management - full width - powered by Latch -->
+        <div class="feat-card feat-card-reveal feat-wide">
+          <div class="feat-card-top">
+            <div class="feat-num">07</div>
+            <div class="feat-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M12 3a4 4 0 0 1 4 4v4H8V7a4 4 0 0 1 4-4z"/><circle cx="12" cy="16" r="1" fill="#aaff00"/></svg>
+            </div>
+          </div>
+          <div class="feat-wide-body">
+            <div>
+              <h3>Secure API Credential Management</h3>
+              <p class="feat-card-tagline">Your Credentials Stay Protected — Enforced by Latch.</p>
+              <p>Carbon uses <a href="https://onlatch.com/" target="_blank" rel="noopener" class="feat-link">Latch</a> to keep your API keys fully protected. Your AI agent interacts through a hardware-enforced proxy token — the real credential never leaves Latch's secure vault. You delegate authority without handing over the key.</p>
+              <ul class="feat-list feat-list-row">
+                <li>Hardware-enforced credential proxy</li>
+                <li>Agents use <code>lat_…</code> tokens, not real keys</li>
+                <li>Real keys stay inside Latch's vault</li>
+                <li>Revoke agent access instantly</li>
+              </ul>
+              <a href="https://onlatch.com/" target="_blank" rel="noopener" class="feat-ext-link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                Learn about Latch →
+              </a>
+            </div>
+            <div class="feat-key-preview">
+              <div class="feat-key-row">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                <span class="feat-key-name">Grok API Key</span>
+                <span class="feat-key-val">lat_••••••••9f2a</span>
+                <span class="feat-key-badge">Latch Protected</span>
+              </div>
+              <div class="feat-key-row">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                <span class="feat-key-name">Coinbase Key</span>
+                <span class="feat-key-val">lat_••••••••3d8e</span>
+                <span class="feat-key-badge">Latch Protected</span>
+              </div>
+              <div class="feat-key-row">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                <span class="feat-key-name">SMS API Key</span>
+                <span class="feat-key-val">lat_••••••••7c1b</span>
+                <span class="feat-key-badge">Latch Protected</span>
+              </div>
+              <div class="feat-latch-note">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2.5" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                Real keys never leave Latch's hardware vault
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 08 Built on Rialo - full width -->
+        <div class="feat-card feat-card-reveal feat-wide feat-rialo-card">
+          <div class="feat-card-top">
+            <div class="feat-num">08</div>
+            <div class="feat-card-icon feat-card-icon-rialo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+            </div>
+          </div>
+          <div class="feat-wide-body">
+            <div>
+              <h3>Built on Rialo Infrastructure</h3>
+              <p class="feat-card-tagline">Real-World Blockchain. Native AI Agent Economy.</p>
+              <p>Carbon runs on <a href="https://www.rialo.io/" target="_blank" rel="noopener" class="feat-link">Rialo</a> — the infrastructure for next-generation intelligent systems. Rialo natively connects smart contracts to real-world APIs and data, enabling Carbon to enforce policies on-chain without relying on fragile off-chain middleware.</p>
+              <ul class="feat-list feat-list-row">
+                <li>Native real-world API calls in smart contracts</li>
+                <li>Sub-second transaction finality</li>
+                <li>Event-driven, reactive policy execution</li>
+                <li>No middleware — oracles built into protocol</li>
+                <li>AI agent economy natively supported</li>
+                <li>Web2-familiar identity (email, social login)</li>
+              </ul>
+              <a href="https://www.rialo.io/" target="_blank" rel="noopener" class="feat-ext-link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+                Explore Rialo →
+              </a>
+            </div>
+            <div class="feat-rialo-stats">
+              <div class="feat-rialo-stat">
+                <div class="frs-val">&lt; 1s</div>
+                <div class="frs-label">Transaction finality</div>
+              </div>
+              <div class="feat-rialo-stat">
+                <div class="frs-val">Native</div>
+                <div class="frs-label">API calls in contracts</div>
+              </div>
+              <div class="feat-rialo-stat">
+                <div class="frs-val">$20M</div>
+                <div class="frs-label">Seed funding (Pantera)</div>
+              </div>
+              <div class="feat-rialo-stat">
+                <div class="frs-val">0</div>
+                <div class="frs-label">Middleware dependencies</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /features-grid -->
+
+      <!-- Bottom tagline -->
+      <div class="features-bottom">
+        <p>One Platform. Complete API Control.</p>
+        <h3>Connect your APIs, define your rules, approve permissions, interact with AI, and monitor every request.</h3>
+        <a href="/register" class="btn-primary btn-large">Launch Carbon →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ════════════════════════════════════════ -->
+  <section class="hiw-section" id="how-it-works">
+    <div class="hiw-inner">
+
+      <!-- Section header -->
+      <div class="hiw-header">
+        <span class="hiw-eyebrow">How Carbon Works</span>
+        <h2 class="hiw-title">Your AI. Your APIs. Your Rules.</h2>
+        <p class="hiw-sub">Carbon is a policy-controlled AI platform that gives you a smarter, safer way to interact with external APIs — through an AI chat interface you control.</p>
+      </div>
+
+      <!-- Vertical timeline of 6 steps -->
+      <div class="hiw-steps">
+
+        <!-- ── Step 01 ── -->
+        <div class="hiw-step hiw-step-reveal">
+          <div class="hiw-step-left">
+            <div class="step-num">01</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="hiw-step-body">
+            <div class="hiw-step-graphic g-connect">
+              <div class="g-hub">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2.5" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              </div>
+              <div class="g-api-chip c1"><span>Grok</span></div>
+              <div class="g-api-chip c2"><span>Coinbase</span></div>
+              <div class="g-api-chip c3"><span>SMS</span></div>
+              <div class="g-api-chip c4"><span>REST</span></div>
+              <svg class="g-lines" viewBox="0 0 220 140" fill="none">
+                <line x1="110" y1="70" x2="28" y2="28"  stroke="#aaff00" stroke-width="1" stroke-dasharray="4 3" opacity="0.5" class="g-dash"/>
+                <line x1="110" y1="70" x2="192" y2="28" stroke="#aaff00" stroke-width="1" stroke-dasharray="4 3" opacity="0.5" class="g-dash"/>
+                <line x1="110" y1="70" x2="28" y2="112" stroke="#aaff00" stroke-width="1" stroke-dasharray="4 3" opacity="0.5" class="g-dash"/>
+                <line x1="110" y1="70" x2="192" y2="112" stroke="#aaff00" stroke-width="1" stroke-dasharray="4 3" opacity="0.5" class="g-dash"/>
+              </svg>
+            </div>
+            <div class="hiw-step-content">
+              <h3>Connect Your APIs</h3>
+              <p>Bring your favorite APIs into one workspace. Connect services like OpenAI, Grok, Coinbase, or your own custom REST APIs. Securely configure credentials and manage all integrations from one place.</p>
+              <div class="hiw-tag-row">
+                <span class="hiw-tag">OpenAI</span>
+                <span class="hiw-tag">Grok</span>
+                <span class="hiw-tag">Coinbase</span>
+                <span class="hiw-tag">Custom REST</span>
+              </div>
+              <p class="hiw-tagline">Your APIs, connected in one workspace.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Step 02 ── -->
+        <div class="hiw-step hiw-step-reveal">
+          <div class="hiw-step-left">
+            <div class="step-num">02</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="hiw-step-body hiw-step-body-rev">
+            <div class="hiw-step-content">
+              <h3>Define Your Policies</h3>
+              <p>Tell Carbon what your AI is allowed to do using simple natural language. Carbon transforms your instructions into structured access policies you can review, validate, and customize.</p>
+              <div class="hiw-policy-box">
+                <div class="hiw-policy-typing">
+                  <span class="policy-cursor">"Allow access to Coinbase API only for Bitcoin price information. Block trading, withdrawals, and all other financial operations."</span>
+                </div>
+              </div>
+              <p class="hiw-tagline">You define the permissions. Carbon organizes the rules.</p>
+            </div>
+            <div class="hiw-step-graphic g-policy">
+              <div class="g-policy-rules">
+                <div class="g-rule g-rule-allow">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Allow — Bitcoin price</span>
+                </div>
+                <div class="g-rule g-rule-block">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ff4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  <span>Block — Trading</span>
+                </div>
+                <div class="g-rule g-rule-block">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ff4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  <span>Block — Withdrawals</span>
+                </div>
+                <div class="g-rule g-rule-limit">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  <span>Limit — 10 req/hour</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Step 03 ── -->
+        <div class="hiw-step hiw-step-reveal">
+          <div class="hiw-step-left">
+            <div class="step-num">03</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="hiw-step-body">
+            <div class="hiw-step-graphic g-review">
+              <div class="g-review-card">
+                <div class="g-review-title">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2.5" stroke-linecap="round"><path d="M12 2L4 6v6c0 5.1 3.4 9.9 8 11.2C16.6 21.9 20 17.1 20 12V6z"/><polyline points="9 12 11 14 15 10"/></svg>
+                  Policy Review
+                </div>
+                <div class="g-review-item">
+                  <span class="g-check"></span>Allowed API endpoints
+                </div>
+                <div class="g-review-item">
+                  <span class="g-check"></span>Restricted operations
+                </div>
+                <div class="g-review-item">
+                  <span class="g-check"></span>Rate limits
+                </div>
+                <div class="g-review-item">
+                  <span class="g-check"></span>Spending limits
+                </div>
+                <div class="g-review-item">
+                  <span class="g-check"></span>Expiration dates
+                </div>
+                <div class="g-activate-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Confirm &amp; Activate
+                </div>
+              </div>
+            </div>
+            <div class="hiw-step-content">
+              <h3>Review &amp; Activate</h3>
+              <p>Before anything becomes active, you get a clear overview of your policy — allowed endpoints, restricted operations, rate limits, spending limits, and expiration dates. Nothing gets activated without your approval.</p>
+              <div class="hiw-checklist">
+                <div class="hiw-check-item"><span></span>Allowed API endpoints</div>
+                <div class="hiw-check-item"><span></span>Restricted operations</div>
+                <div class="hiw-check-item"><span></span>Request rate limits</div>
+                <div class="hiw-check-item"><span></span>Permission duration</div>
+              </div>
+              <p class="hiw-tagline">Nothing gets activated without your approval.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Step 04 ── -->
+        <div class="hiw-step hiw-step-reveal">
+          <div class="hiw-step-left">
+            <div class="step-num">04</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="hiw-step-body hiw-step-body-rev">
+            <div class="hiw-step-content">
+              <h3>Chat With Your AI</h3>
+              <p>Meet your AI Playground. Ask questions, give instructions, and let your AI use connected APIs to complete permitted tasks. Get clear explanations when an action is restricted.</p>
+              <div class="hiw-tag-row">
+                <span class="hiw-tag hiw-tag-green">Ask for Bitcoin price</span>
+                <span class="hiw-tag hiw-tag-green">Retrieve info</span>
+                <span class="hiw-tag hiw-tag-red">Trading blocked</span>
+              </div>
+              <p class="hiw-tagline">Chat naturally. Your policies control what happens behind the scenes.</p>
+            </div>
+            <div class="hiw-step-graphic g-chat">
+              <div class="g-chat-window">
+                <div class="g-chat-msg user">What's the current Bitcoin price?</div>
+                <div class="g-chat-msg ai">
+                  <span class="g-ai-icon">C</span>
+                  Bitcoin is currently at <strong>$67,420</strong> — request allowed via Coinbase policy.
+                </div>
+                <div class="g-chat-msg user">Can you execute a trade?</div>
+                <div class="g-chat-msg ai blocked-msg">
+                  <span class="g-ai-icon g-ai-block">✗</span>
+                  Trading is restricted by your active policy.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Step 05 ── -->
+        <div class="hiw-step hiw-step-reveal">
+          <div class="hiw-step-left">
+            <div class="step-num">05</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="hiw-step-body">
+            <div class="hiw-step-graphic g-security">
+              <div class="g-sec-row">
+                <div class="g-sec-stat">
+                  <div class="g-sec-num" style="color:#aaff00">12</div>
+                  <div class="g-sec-label">Active</div>
+                </div>
+                <div class="g-sec-stat">
+                  <div class="g-sec-num" style="color:#ff4444">3</div>
+                  <div class="g-sec-label">Blocked</div>
+                </div>
+                <div class="g-sec-stat">
+                  <div class="g-sec-num" style="color:#ffcc00">2</div>
+                  <div class="g-sec-label">Limits</div>
+                </div>
+              </div>
+              <div class="g-sec-bar-wrap">
+                <div class="g-sec-bar-label">Rate limit usage</div>
+                <div class="g-sec-bar"><div class="g-sec-fill" style="width:68%"></div></div>
+                <div class="g-sec-bar-label">Spending limit</div>
+                <div class="g-sec-bar"><div class="g-sec-fill g-sec-fill-warn" style="width:34%"></div></div>
+              </div>
+            </div>
+            <div class="hiw-step-content">
+              <h3>Monitor Security &amp; Limits</h3>
+              <p>Stay in control of your AI's API access. The Security &amp; Limits dashboard lets you monitor active permissions, access rules, rate limits, blocked operations, and security-related activity in real time.</p>
+              <div class="hiw-checklist">
+                <div class="hiw-check-item"><span></span>Active &amp; restricted permissions</div>
+                <div class="hiw-check-item"><span></span>API access rules</div>
+                <div class="hiw-check-item"><span></span>Rate &amp; usage limits</div>
+                <div class="hiw-check-item"><span></span>Blocked operations</div>
+              </div>
+              <p class="hiw-tagline">Know exactly what your AI can access.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Step 06 ── -->
+        <div class="hiw-step hiw-step-reveal">
+          <div class="hiw-step-left">
+            <div class="step-num">06</div>
+          </div>
+          <div class="hiw-step-body hiw-step-body-rev">
+            <div class="hiw-step-content">
+              <h3>Track Every Request</h3>
+              <p>Every API interaction should be accountable. With Request Logs, review the full activity — which API was called, whether it was allowed or blocked, which policy was applied, and why a request was rejected.</p>
+              <div class="hiw-tag-row">
+                <span class="hiw-tag">API called</span>
+                <span class="hiw-tag">Policy applied</span>
+                <span class="hiw-tag">Timestamp</span>
+                <span class="hiw-tag">Rejection reason</span>
+              </div>
+              <p class="hiw-tagline">Complete visibility into your AI's API activity.</p>
+            </div>
+            <div class="hiw-step-graphic g-logs">
+              <div class="g-log-row allowed-row">
+                <span class="g-log-dot g-dot-green"></span>
+                <span class="g-log-api">Coinbase</span>
+                <span class="g-log-status g-status-allow">Allowed</span>
+                <span class="g-log-time">2 min ago</span>
+              </div>
+              <div class="g-log-row blocked-row">
+                <span class="g-log-dot g-dot-red"></span>
+                <span class="g-log-api">Coinbase</span>
+                <span class="g-log-status g-status-block">Blocked</span>
+                <span class="g-log-time">8 min ago</span>
+              </div>
+              <div class="g-log-row blocked-row">
+                <span class="g-log-dot g-dot-red"></span>
+                <span class="g-log-api">SMS API</span>
+                <span class="g-log-status g-status-block">Blocked</span>
+                <span class="g-log-time">16 min ago</span>
+              </div>
+              <div class="g-log-row allowed-row">
+                <span class="g-log-dot g-dot-green"></span>
+                <span class="g-log-api">Grok</span>
+                <span class="g-log-status g-status-allow">Allowed</span>
+                <span class="g-log-time">20 min ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /hiw-steps -->
+
+      <!-- Bottom CTA bar -->
+      <div class="hiw-cta">
+        <div class="hiw-cta-steps">
+          <span>Connect</span><span class="hiw-cta-dot">→</span>
+          <span>Define</span><span class="hiw-cta-dot">→</span>
+          <span>Approve</span><span class="hiw-cta-dot">→</span>
+          <span>Interact</span><span class="hiw-cta-dot">→</span>
+          <span>Monitor</span>
+        </div>
+        <h3>Carbon — Give Your AI the Access It Needs. Nothing More.</h3>
+        <div class="hiw-powered-row">
+          <span>Built on</span>
+          <a href="https://www.rialo.io/" target="_blank" rel="noopener" class="hiw-pow-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+            Rialo
+          </a>
+          <span>· Protected by</span>
+          <a href="https://onlatch.com/" target="_blank" rel="noopener" class="hiw-pow-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#aaff00" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            Latch
+          </a>
+        </div>
+        <a href="/register" class="btn-primary btn-large">Launch Carbon →</a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">
+          <img src="/assets/carbon-logo.svg" width="28" height="28" alt="Carbon Logo"/>
+          <span>Carbon</span>
+        </a>
+        <p>The AI API Management Platform<br/>built for developers.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#">Features</a>
+          <a href="#">Changelog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Developers</h4>
+          <a href="#">API Reference</a>
+          <a href="#">Status</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Carbon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ═══ SCROLL REVEAL ════════════════════════════════════════ -->
+  <script>
+  (function(){
+    function revealAll(selector){
+      document.querySelectorAll(selector).forEach(function(el, i){
+        el.style.animationDelay = (i * 80) + 'ms';
+        el.classList.add('visible');
+      });
+    }
+
+    // Observe elements — reveal as they scroll into view
+    function observe(selector){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll(selector).forEach(function(el){ io.observe(el); });
+    }
+
+    observe('.hiw-step-reveal');
+    observe('.feat-card-reveal');
+
+    // Nav clicks: immediately scroll then reveal
+    document.querySelectorAll('a[href="#features"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        setTimeout(function(){ revealAll('.feat-card-reveal'); }, 500);
+      });
+    });
+    document.querySelectorAll('a[href="#how-it-works"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        setTimeout(function(){ revealAll('.hiw-step-reveal'); }, 500);
+      });
+    });
+  })();
+  </script>
+
+  <!-- ═══ BACKGROUND CANVAS ANIMATION ══════════════════════════ -->
+  <script>
+  (function(){
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, lines = [], nodes = [], particles = [];
+
+    function resize(){
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight * 3;
+    }
+
+    // Grid lines
+    function initGrid(){
+      lines = [];
+      const spacing = 80;
+      // Vertical
+      for(let x = 0; x <= W; x += spacing)
+        lines.push({x1:x,y1:0,x2:x,y2:H,horiz:false});
+      // Horizontal
+      for(let y = 0; y <= H; y += spacing)
+        lines.push({x1:0,y1:y,x2:W,y2:y,horiz:true});
+    }
+
+    // Floating network nodes
+    function initNodes(){
+      nodes = [];
+      for(let i = 0; i < 18; i++){
+        nodes.push({
+          x: Math.random() * W,
+          y: Math.random() * window.innerHeight,
+          r: Math.random() * 2.5 + 1,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          opacity: Math.random() * 0.5 + 0.2,
+          pulse: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    // Floating particles
+    function initParticles(){
+      particles = [];
+      for(let i = 0; i < 40; i++){
+        particles.push({
+          x: Math.random() * W,
+          y: Math.random() * window.innerHeight,
+          r: Math.random() * 1.5 + 0.3,
+          vy: -(Math.random() * 0.6 + 0.1),
+          vx: (Math.random() - 0.5) * 0.2,
+          opacity: Math.random() * 0.4 + 0.1,
+          life: Math.random()
+        });
+      }
+    }
+
+    let tick = 0;
+    function draw(){
+      ctx.clearRect(0, 0, W, H);
+
+      // ── Grid ─────────────────────────────────────────
+      lines.forEach(l => {
+        const prog = (tick * 0.003 + (l.horiz ? l.y1 : l.x1) * 0.002) % (Math.PI * 2);
+        const alpha = 0.025 + Math.sin(prog) * 0.015;
+        ctx.strokeStyle = `rgba(170,255,0,${alpha})`;
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(l.x1, l.y1);
+        ctx.lineTo(l.x2, l.y2);
+        ctx.stroke();
+      });
+
+      // ── Grid intersection glow dots ──────────────────
+      const spacing = 80;
+      for(let x = 0; x <= W; x += spacing){
+        for(let y = 0; y <= Math.min(H, window.innerHeight); y += spacing){
+          const phase = (tick * 0.01 + x * 0.05 + y * 0.05) % (Math.PI * 2);
+          const a = Math.max(0, Math.sin(phase) * 0.18);
+          if(a > 0.02){
+            ctx.beginPath();
+            ctx.arc(x, y, 1.2, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(170,255,0,${a})`;
+            ctx.fill();
+          }
+        }
+      }
+
+      // ── Network nodes + connections ──────────────────
+      nodes.forEach(n => {
+        n.x += n.vx; n.y += n.vy;
+        n.pulse += 0.02;
+        if(n.x < 0 || n.x > W) n.vx *= -1;
+        if(n.y < 0 || n.y > window.innerHeight) n.vy *= -1;
+        const a = n.opacity * (0.7 + Math.sin(n.pulse) * 0.3);
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(170,255,0,${a})`;
+        ctx.fill();
+        // Outer ring
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r + 3 + Math.sin(n.pulse) * 2, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(170,255,0,${a * 0.3})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      });
+
+      // Draw connections between close nodes
+      for(let i = 0; i < nodes.length; i++){
+        for(let j = i+1; j < nodes.length; j++){
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if(dist < 160){
+            const a = (1 - dist/160) * 0.12;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = `rgba(170,255,0,${a})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // ── Rising particles ─────────────────────────────
+      particles.forEach(p => {
+        p.y += p.vy; p.x += p.vx; p.life += 0.003;
+        if(p.y < -10){ p.y = window.innerHeight + 10; p.x = Math.random() * W; }
+        const a = p.opacity * Math.sin(p.life * Math.PI);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(170,255,0,${Math.max(0,a)})`;
+        ctx.fill();
+      });
+
+      tick++;
+      requestAnimationFrame(draw);
+    }
+
+    function init(){
+      resize();
+      initGrid();
+      initNodes();
+      initParticles();
+      draw();
+    }
+
+    window.addEventListener('resize', () => { resize(); initGrid(); });
+    init();
+  })();
+  </script>
+
+</body>
+</html>
